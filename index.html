@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아이템 트래커</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- 헤더 섹션 -->
+    <header class="header">
+        <div class="header-content">
+            <h1>아이템 트래커</h1>
+            <div class="header-actions">
+                <button class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="add-item-btn">
+                    <i class="fas fa-plus"></i>
+                    <span>새 아이템</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 검색 및 필터 섹션 -->
+    <section class="search-section">
+        <div class="search-container">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="아이템 검색...">
+            </div>
+            <div class="filter-group">
+                <select class="filter-select">
+                    <option value="">카테고리</option>
+                    <option value="electronics">전자기기</option>
+                    <option value="furniture">가구</option>
+                    <option value="kitchen">주방용품</option>
+                </select>
+                <select class="filter-select">
+                    <option value="recent">최근 사용순</option>
+                    <option value="unused">미사용순</option>
+                    <option value="name">이름순</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <!-- 메인 컨텐츠 -->
+    <main class="main-content">
+        <div class="items-grid">
+            <!-- 아이템 카드 예시 -->
+            <article class="item-card">
+                <div class="item-image">
+                    <img src="https://via.placeholder.com/150" alt="커피머신">
+                    <span class="item-status warning">30일째 미사용</span>
+                </div>
+                <div class="item-info">
+                    <h3>커피머신</h3>
+                    <p class="item-category">주방용품</p>
+                    <div class="item-usage">
+                        <div class="usage-bar">
+                            <div class="usage-progress warning" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 추가 아이템 카드들 -->
+        </div>
+    </main>
+
+    <!-- 새 아이템 추가 모달 -->
+    <div class="modal" id="addItemModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>새 아이템 등록</h2>
+                <button class="close-modal">×</button>
+            </div>
+            <form class="add-item-form">
+                <div class="image-upload-area">
+                    <input type="file" id="itemImage" hidden>
+                    <label for="itemImage" class="upload-label">
+                        <i class="fas fa-camera"></i>
+                        <span>이미지 선택</span>
+                    </label>
+                    <img id="imagePreview" class="hidden">
+                </div>
+                <div class="form-group">
+                    <label>아이템 이름</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>카테고리</label>
+                    <select required>
+                        <option value="">선택해주세요</option>
+                        <option value="electronics">전자기기</option>
+                        <option value="furniture">가구</option>
+                        <option value="kitchen">주방용품</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>알림 주기 (일)</label>
+                    <input type="number" min="1" required>
+                </div>
+                <button type="submit" class="submit-btn">등록하기</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html> 
